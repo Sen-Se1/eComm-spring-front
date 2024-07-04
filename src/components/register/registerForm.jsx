@@ -45,6 +45,7 @@ const RegisterForm = () => {
       return setError('Registration failed:', error);
     }
   };
+  console.log(process.env.NEXT_PUBLIC_API_HOST)
 
   
   return (
