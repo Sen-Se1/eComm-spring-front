@@ -22,6 +22,8 @@ const RegisterForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(process.env.NEXT_PUBLIC_API_HOST)
+
     if (!firstName ||!lastName ||!address ||!phoneNumber ||!email ||!password) {
       return setError('Please fill all the fields');
     }
@@ -45,7 +47,6 @@ const RegisterForm = () => {
       return setError('Registration failed:', error);
     }
   };
-  console.log(process.env.NEXT_PUBLIC_API_HOST)
 
   
   return (
