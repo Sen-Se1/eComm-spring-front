@@ -21,7 +21,7 @@ const LoginForm = () => {
       return setError('Please fill all the fields');
     }
     try {
-      const response = await axios.post(`${process.env.API_HOST}/Client/login`, {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_HOST}/Client/login`, {
         emailCl: email,
         passwordCl: password,
       });

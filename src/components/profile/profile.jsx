@@ -17,7 +17,7 @@ const Profile = () => {
     const fetchProfile = async () => {
       const id = localStorage.getItem('userId');
       try {
-        const response = await axios.get(`${process.env.API_HOST}/Client/${id}`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_HOST}/Client/${id}`);
         if (response.status === 200) {
           setUser(response.data.Client);
         }
@@ -43,7 +43,7 @@ const Profile = () => {
     const id = localStorage.getItem('userId');
     e.preventDefault();
     try {
-      const response = await axios.delete(`${process.env.API_HOST}/Client/delete/${id}`); 
+      const response = await axios.delete(`${process.env.NEXT_PUBLIC_API_HOST}/Client/delete/${id}`); 
       if (response.status === 200 || response.status === 204) {
         alert('Profile deleted successfully');
         localStorage.removeItem('user');
