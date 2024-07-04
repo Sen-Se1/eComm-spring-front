@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:3333/Articles');
+        const response = await axios.get(`${process.env.API_HOST}/Articles`);
         if (response.status === 200) {
           setProducts(response.data.Result);
         }
