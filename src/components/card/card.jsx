@@ -12,7 +12,7 @@ const Card = ({ product }) => {
       idArticle: idArt
     }
     try {
-      const response = await axios.post('http://localhost:3333/Commands/addPTC', data);
+      const response = await axios.post(`${process.env.API_HOST}/Commands/addPTC`, data);
       if (response.status === 200) {
         alert("added successfully")
       }
