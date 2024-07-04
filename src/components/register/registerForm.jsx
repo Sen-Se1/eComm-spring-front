@@ -27,7 +27,7 @@ const RegisterForm = () => {
     }
     
     try {
-      const response = await axios.post('http://localhost:3333/Client/save', {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_HOST}/Client/save`, {
         nomCl : firstName,
         prenomCl : lastName,
         adresseCl : address,
