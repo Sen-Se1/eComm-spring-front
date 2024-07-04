@@ -54,7 +54,7 @@ const Profile = () => {
       alert('Failed to delete profile:', error);
     }
   };
-
+console.log(process.env.NEXT_PUBLIC_API_HOST)
   return (
     <div className="max-w-xl mx-auto p-8 bg-white ">
     <h2 className="text-3xl text-neutral-600 font-bold mb-6 text-center">User Profile</h2>
