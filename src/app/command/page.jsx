@@ -17,7 +17,7 @@ const Page = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_HOST}/Client`);
+        const response = await axios.get(`http://localhost:3333/Client`);
         if (response.status === 200) {
           setCommand(response.data);
         }
@@ -55,7 +55,7 @@ const Page = () => {
     };
     try {
       const response = await axios.delete(
-        `${process.env.NEXT_PUBLIC_API_HOST}/Commands/deleteAllProduct`,
+        "http://localhost:3333/Commands/deleteAllProduct",
         { data: data }
       );
       if (response.status === 200) {

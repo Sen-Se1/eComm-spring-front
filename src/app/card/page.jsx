@@ -18,7 +18,7 @@ const WhichlistPage = () => {
     const fetchProfile = async () => {
       const id = localStorage.getItem('userId');
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_HOST}/Commands/user/${id}`);
+        const response = await axios.get(`http://localhost:3333/Commands/user/${id}`);
         if (response.status === 200) {
           setWishlist(response.data);
         }
@@ -46,7 +46,7 @@ const WhichlistPage = () => {
       idArticle: idArt
     }
     try {
-      const response = await axios.delete(`${process.env.NEXT_PUBLIC_API_HOST}/Commands/deleteFC`, {data: data});
+      const response = await axios.delete('http://localhost:3333/Commands/deleteFC', {data: data});
       if (response.status === 200) {
         setWishlist(wishlist.filter((item) => item.idArt !== idArt));
       }
@@ -62,7 +62,7 @@ const WhichlistPage = () => {
       idClient: id
     }
     try {
-      const response = await axios.delete(`${process.env.NEXT_PUBLIC_API_HOST}/Commands/deleteAllProduct`, {data: data});
+      const response = await axios.delete('http://localhost:3333/Commands/deleteAllProduct', {data: data});
       if (response.status === 200) {
         setWishlist([]);
       }
